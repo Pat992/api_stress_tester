@@ -43,7 +43,7 @@ class _MainPageState extends State<MainPage> {
   late Uri _uri;
   String _body = "";
   String _contentType = "application/json";
-  String _userAgent = "APIstress/v1.0.0";
+  String _userAgent = "APIStressTest/v1.0.0";
   bool _isRunning = false;
   int _time = 200;
   final List<String> _timeType = ['Milliseconds', 'Seconds', 'Minutes'];
@@ -52,11 +52,12 @@ class _MainPageState extends State<MainPage> {
   String _chosenMethod = 'GET';
   int _uuidLength = 10;
   final Uuid _uuid = const Uuid();
-  final List<String> _results = [];
+  List<String> _results = [];
   int _reqNumber = 0;
 
   Future<void> _start() async {
     _uri = Uri.parse(_url);
+    _results = [];
     _reqNumber = 0;
     setState(() {
       _isRunning = true;
@@ -122,6 +123,9 @@ class _MainPageState extends State<MainPage> {
       }
       setState(() {
         _results.insert(0, '${res.statusCode.toString()}\n${res.body}');
+        if (_results.length > 200) {
+          _results.removeLast();
+        }
       });
     } catch (e) {
       setState(() {
