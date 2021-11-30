@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
@@ -9,11 +8,12 @@ import 'package:uuid/uuid.dart';
 import 'package:window_size/window_size.dart';
 
 void main() {
-  // if (Platform.isWindows || Platform.isLinux || Platform.isMacOS) {
-  //   setWindowTitle('API Stress-Tester');
-  //   setWindowMinSize(const Size(990, 700));
-  //   setWindowMaxSize(Size.infinite);
-  // }
+  WidgetsFlutterBinding.ensureInitialized();
+  if (Platform.isWindows || Platform.isLinux || Platform.isMacOS) {
+    setWindowTitle('API Stress-Tester');
+    setWindowMinSize(const Size(990, 800));
+    setWindowMaxSize(Size.infinite);
+  }
   runApp(const MyApp());
 }
 
