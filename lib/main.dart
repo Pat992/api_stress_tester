@@ -232,12 +232,6 @@ class _MainPageState extends State<MainPage> {
             Row(
               children: const <Widget>[
                 Text('Settings'),
-                SizedBox(width: 20),
-                Tooltip(
-                  message: 'Add "%UUID%" for a random generated GUID',
-                  textStyle: TextStyle(fontSize: 15, color: Colors.black),
-                  child: Icon(Icons.info),
-                ),
               ],
             ),
             Card(
@@ -293,7 +287,17 @@ class _MainPageState extends State<MainPage> {
               ),
             ),
             const SizedBox(height: 10),
-            const Text('Body'),
+            Row(
+              children: const <Widget>[
+                Text('Body'),
+                SizedBox(width: 20),
+                Tooltip(
+                  message: 'Add "%UUID%" for a random generated GUID',
+                  textStyle: TextStyle(fontSize: 15, color: Colors.black),
+                  child: Icon(Icons.info),
+                ),
+              ],
+            ),
             SizedBox(
               height: 10 * 20.0,
               child: TextFormField(
