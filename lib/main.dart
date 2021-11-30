@@ -274,6 +274,7 @@ class _MainPageState extends State<MainPage> {
                         onChanged: (val) => _time = int.tryParse(val) ?? 0,
                       ),
                     ),
+                    const SizedBox(width: 20),
                     Expanded(
                       child: TextFormField(
                         decoration:
