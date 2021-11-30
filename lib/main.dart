@@ -11,7 +11,7 @@ void main() {
   WidgetsFlutterBinding.ensureInitialized();
   if (Platform.isWindows || Platform.isLinux || Platform.isMacOS) {
     setWindowTitle('API Stress-Tester');
-    setWindowMinSize(const Size(990, 800));
+    setWindowMinSize(const Size(990, 720));
     setWindowMaxSize(Size.infinite);
   }
   runApp(const MyApp());
